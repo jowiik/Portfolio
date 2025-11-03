@@ -2,121 +2,56 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Joseph Kim — Software Engineer</title>
+  <title>Joseph Kim</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Portfolio of Joseph Kim, AI-focused software engineer.">
+  <meta name="description" content="Portfolio of Joseph Kim, software engineer.">
   <link rel="icon" href="favicon.ico">
   <link rel="author" href="humans.txt">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="site">
+  <header class="site-header">
+    <h1>Joseph Kim</h1>
+    <nav aria-label="Primary navigation" class="site-nav">
+      <a href="index.html" aria-current="page">Home</a>
+      <a href="about.html">About</a>
+      <a href="resume.html">Resume</a>
+      <a href="projects.html">Work</a>
+      <a href="experiments.html">Lab</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
 
-  <!-- Allowed minimal CSS (border doesn't count toward the limit).
-       CSS under ai-callout is exempt per your assignment note. -->
-  <style>
-    main { border: 1px solid #ccc; }
-    ai-callout { display:block; border-left:4px solid #0b84ff; padding:.5rem 1rem; background:#f4f9ff; }
-  </style>
+  <main class="site-main">
+    <section aria-label="Profile photo" class="profile">
+      <picture>
+        <source srcset="Headshot.JPEG" type="image/jpeg">
+        <img src="Headshot.JPEG" alt="Joseph Kim headshot" class="headshot">
+      </picture>
+    </section>
 
-  <!-- Allowed Hello World custom element-->
+    <section aria-labelledby="intro" class="hero">
+      <h2 id="intro" class="hero-title">Hi, I'm Joseph</h2>
+      <p class="lead intro-text">
+        I am a senior at the University of California, San Diego pursuing a Bachelor of Science in Computer Science.
+        I am currently seeking internship and full-time opportunities as a Front-End or Full Stack Software Engineer,
+        where I can apply my technical skills and creativity to something that makes a real impact.
+      </p>
+      <p class="progress-row">Portfolio completion: <progress value="50" max="100">50%</progress></p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2025 Joseph Kim</p>
+  </footer>
+
+  <!-- Optional: restore your hello-world custom element -->
   <script>
     class HelloConsole extends HTMLElement {
       connectedCallback(){ console.log("Hello world! — from <hello-console>"); }
     }
     customElements.define('hello-console', HelloConsole);
   </script>
-</head>
-<body>
-<header>
-  <h1><span>Joseph Kim</span> — Software Engineer</h1>
-  <nav aria-label="Primary">
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="resume.html">Resume</a>
-    <a href="projects.html">Projects</a>
-    <a href="experiments.html">Experiments</a>
-    <a href="contact.html">Contact</a>
-  </nav>
-</header>
-
-<!-- Put noscript in the BODY, not the HEAD -->
-<noscript>This site works without JavaScript; custom elements just won’t log to the console.</noscript>
-
-<main>
-  <section aria-labelledby="intro" class="hero prose">
-    <h2 id="intro" class="section-title">Designing intelligent systems that think and learn</h2>
-    <p>I’m <strong>Joseph Kim</strong>, a software engineer focused on <em>machine learning</em>, <em>data systems</em>, and scalable AI solutions.</p>
-
-    <ai-callout><strong>Currently seeking</strong> opportunities in AI/ML engineering and data-driven software development.</ai-callout>
-
-    <div class="cluster buttons" style="margin-block:.25rem 1rem;">
-      <a class="btn" href="resume.html">View Resume</a>
-      <a class="btn" href="projects.html">See Projects</a>
-      <a class="btn" href="contact.html">Contact</a>
-    </div>
-
-    <p class="muted" style="margin-top:-.25rem">
-      Live site: <a href="./">Portfolio</a> ·
-      GitHub: <a href="https://github.com/jowiik">github.com/jowiik</a>
-    </p>
-
-    <p>Portfolio health: <progress value="70" max="100">70%</progress></p>
-  </section>
-
-  <section aria-labelledby="media">
-    <h2 id="media">Media</h2>
-    <!-- Ensure types match the actual files -->
-    <picture>
-      <source srcset="images.jpeg" type="image/webp">
-      <source srcset="images.jpeg" type="image/jpg">
-      <img src="images.jpeg" alt="Joseph Kim at a desk">
-    </picture>
-
-    <h3>About (iframe preview)</h3>
-    <!-- Use CSS for percentage width -->
-    <iframe title="About preview" src="about.html" style="width:100%; height:160px;"></iframe>
-  </section>
-
-  <section aria-labelledby="play">
-    <h2 id="play">Playground (required tags demo)</h2>
-
-    <template id="card">
-      <article>
-        <h3>Template Card</h3>
-        <p>Inert content for demo.</p>
-      </article>
-    </template>
-
-    <p>Audio sample:</p>
-    <audio controls>
-      <source src="GPad.mp3" type="audio/mpeg">
-      Your browser does not support the audio element.
-    </audio>
-
-    <p>Video sample:</p>
-    <video controls width="420">
-      <source src="waving.mov" type="video/webm">
-      <source src="waving.mov"  type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
-
-    <p>Canvas (no script):</p>
-    <canvas width="420" height="120">Canvas fallback text.</canvas>
-  </section>
-
-  <section aria-labelledby="more">
-    <h2 id="more">More</h2>
-    <ul>
-      <li><a href="projects.html">Recent AI Projects</a></li>
-      <li><a href="contact.html">Contact &amp; Availability</a></li>
-    </ul>
-    <article>
-      <h3>Featured Case Study</h3>
-      <p><strong>Vision</strong> model for defect detection (PyTorch). <em>Result:</em> 18% fewer false positives.</p>
-    </article>
-  </section>
-</main>
-
-<footer>
-  <p>&copy; 2025 Joseph Kim</p>
   <hello-console></hello-console>
-</footer>
 </body>
 </html>

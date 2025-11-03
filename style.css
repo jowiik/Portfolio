@@ -1,0 +1,214 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+:root {
+  --max-w: 960px;
+  --space: 1rem;
+  --space-lg: 1.75rem;
+  --bg: #ffffff;
+  --fg: #0b1220;
+  --muted: #5a6472;
+  --brand: #0b84ff;
+  --brand-ink: #0a66c2;
+  --h1: 2.75rem;
+  --h2: 2rem;
+  --lead: 1.2rem;
+  --radius-full: 9999px;
+  --hero-min: 35dvh;
+}
+
+html { font-size: 105%; }
+
+body.site {
+  margin: 0;
+  background: var(--bg, #fff);
+  color: var(--fg, #111);
+  font-family: "Quicksand", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  line-height: 1.65;
+}
+
+/* Layout wrappers */
+.site-header,
+.site-main,
+.site-footer {
+  max-width: var(--max-w, 960px); /* var fallback */
+  margin-inline: auto;
+  padding-inline: var(--space, 1rem); /* var fallback */
+}
+
+.site-header { padding-block: 1.5rem 0.5rem; }
+
+.site-footer {
+  padding-block: 0 1.5rem;
+  text-align: center;
+  color: var(--muted, #666); /* var fallback */
+}
+
+@keyframes slide-in-down {
+  from {
+    opacity: 0;
+    transform: translateY(-18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.site-header {
+  animation: slide-in-down 1000ms ease-out both;
+}
+
+/* animate the nav itself with a slight delay */
+.site-nav {
+  animation: slide-in-down 1000ms ease-out both;
+}
+
+/* Headings & nav */
+.site-header h1 {
+  font-size: var(--h1, 2.5rem); /* var fallback */
+  margin: 0 0 0.25rem;
+}
+
+.site-nav {
+  display: flex; /* Flexbox */
+  flex-wrap: wrap;
+  gap: 0.75rem 1rem;
+  font-size: 1.05rem;
+}
+
+.site-nav {
+    a {
+        position: relative;
+        color: var(--brand-ink, #0a66c2);
+        text-decoration: none;
+        transition: color 0.2s ease;
+    }
+}
+
+.site-nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0%;
+  height: 2px;
+  background-color: var(--brand, #0b84ff);
+  transition: width 0.25s ease;
+}
+
+.site-nav a:hover {
+  color: #005eff; /* brighter, more obvious hover color */
+}
+
+.site-nav a:hover::after {
+  width: 100%;
+}
+
+.site-nav a[aria-current="page"] { font-weight: 600; }
+
+/* Main content grid */
+.site-main {
+  display: grid; /* Grid */
+  grid-template-columns: 1fr;
+  gap: var(--space-lg, 1.75rem);
+  padding-block: 1rem 2rem;
+}
+
+/* Profile photo */
+.profile {
+  text-align: center;
+  margin-block: 1rem;
+}
+
+.headshot {
+  width: clamp(14rem, 28dvw, 20rem); /* dynamic viewport unit + relative units */
+  aspect-ratio: 1;
+  border-radius: var(--radius-full, 9999px);
+  object-fit: cover;
+  object-position: center 25%;
+  display: block;
+  margin: 1rem auto 1.25rem;
+  animation: float-in 1000ms ease-out both; /* animation */
+  will-change: transform, opacity;
+}
+.headshot:hover {
+  transform: scale(1.03);           /* transform */
+  transition: transform .15s ease;   /* transition */
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Hero section */
+.hero {
+  min-block-size: var(--hero-min, 35vh); /* dvh fallback to vh */
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding-block: 0;
+}
+
+.hero-title {
+  font-size: var(--h2, 2rem);
+  margin-block: 0 0.5rem;
+  animation: fade-up 1000ms ease-out both;
+}
+
+.lead { font-size: var(--lead, 1.1rem); }
+
+.intro-text {
+  max-width: 65ch;
+  margin-inline: auto;
+  margin-block: 0 0.75rem;
+}
+
+.progress-row { margin: 0; }
+
+/* Animate hero text on load */
+.hero p,
+.hero progress {
+  opacity: 0;
+  animation: fade-up 1000ms ease-out both;
+}
+
+/* Respect reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .hero p,
+  .hero progress {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Media query */
+@media (max-width: 22rem) {
+  .site-header { padding-block: 1rem 0.25rem; }
+  .headshot { width: 12rem; margin: 0.75rem auto 1rem; }
+}
+
+/* Native CSS Nesting (supported): scope to header nav link tweaks */
+.site-header {
+  nav {
+    a { padding: 0.25em 0.15em; border-radius: 0.35em; } /* relative units (em) */
+  }
+}
+
+/* Baseline 2024 feature: @scope — limits styles to .hero subtree only */
+@scope (.hero) {
+  progress[value] { accent-color: var(--brand, #0b84ff); }
+}
+
+/* Keyframes for the headshot animation */
+@keyframes float-in {
+  from { opacity: 0; transform: translateY(8px) scale(.985); }
+  to   { opacity: 1; transform: translateY(0)    scale(1); }
+}
