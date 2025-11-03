@@ -56,12 +56,11 @@ body.site {
 }
 
 .site-header {
-  animation: slide-in-down 1000ms ease-out both;
+  animation: slide-in-down 600ms ease-out both;
 }
 
-/* animate the nav itself with a slight delay */
 .site-nav {
-  animation: slide-in-down 1000ms ease-out both;
+  animation: slide-in-down 600ms ease-out both;
 }
 
 /* Headings & nav */
@@ -129,7 +128,7 @@ body.site {
   object-position: center 25%;
   display: block;
   margin: 1rem auto 1.25rem;
-  animation: float-in 1000ms ease-out both; /* animation */
+  animation: float-in 600ms ease-out both; /* animation */
   will-change: transform, opacity;
 }
 .headshot:hover {
@@ -160,7 +159,7 @@ body.site {
 .hero-title {
   font-size: var(--h2, 2rem);
   margin-block: 0 0.5rem;
-  animation: fade-up 1000ms ease-out both;
+  animation: fade-up 600ms ease-out both;
 }
 
 .lead { font-size: var(--lead, 1.1rem); }
@@ -177,7 +176,7 @@ body.site {
 .hero p,
 .hero progress {
   opacity: 0;
-  animation: fade-up 1000ms ease-out both;
+  animation: fade-up 600ms ease-out both;
 }
 
 /* Respect reduced motion preferences */
