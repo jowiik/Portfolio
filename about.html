@@ -4,30 +4,38 @@
   <meta charset="utf-8">
   <title>About — Joseph Kim</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="About Joseph Kim">
   <link rel="icon" href="favicon.ico">
+  <link rel="author" href="humans.txt">
+  <link rel="stylesheet" href="style.css">
 </head>
-<body>
-<header>
-  <h1>About Joseph</h1>
-  <nav aria-label="Breadcrumb"><a href="index.html">Home</a> › About</nav>
-</header>
+<body class="site">
+  <header class="site-header">
+    <h1>Joseph Kim</h1>
+    <nav aria-label="Primary navigation" class="site-nav">
+      <a href="index.html">Home</a>
+      <a href="about.html" aria-current="page">About</a>
+      <a href="resume.html">Resume</a>
+      <a href="projects.html">Projects</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
 
-<main>
-  <section>
-    <h2>Bio</h2>
-    <p>I’m a 21-year-old software engineer focused on AI/ML. I like clean data, clear baselines, and reproducible results.</p>
-  </section>
+  <main class="site-main">
+    <section aria-labelledby="about" class="hero">
+      <h2 id="about" class="hero-title">About</h2>
+      <p class="lead intro-text">
+        I’m a senior at UC San Diego studying Computer Science, focused on front-end and full-stack development.
+        I enjoy turning ideas into simple, accessible interfaces that feel fast and intentional.
+      </p>
+      <p class="progress-row">
+        Interests: UI engineering, accessibility, performance, and AI-adjacent tooling.
+      </p>
+    </section>
+  </main>
 
-  <section>
-    <h2>Personality</h2>
-    <ul>
-      <li><strong>Archetype:</strong> The AI Geek</li>
-      <li><strong>Style:</strong> Analytical, curious, practical</li>
-    </ul>
-    <dialog open><p><strong>Note:</strong> This dialog is here to demonstrate the tag.</p></dialog>
-  </section>
-</main>
-
-<footer><p>&copy; 2025 Joseph Kim</p></footer>
+  <footer class="site-footer">
+    <p>&copy; 2025 Joseph Kim</p>
+  </footer>
 </body>
 </html>

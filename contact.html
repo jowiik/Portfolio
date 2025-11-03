@@ -4,45 +4,37 @@
   <meta charset="utf-8">
   <title>Contact — Joseph Kim</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Contact Joseph Kim">
   <link rel="icon" href="favicon.ico">
+  <link rel="author" href="humans.txt">
+  <link rel="stylesheet" href="style.css">
 </head>
-<body>
-<header>
-  <h1>Contact</h1>
-  <nav aria-label="Breadcrumb"><a href="index.html">Home</a> › Contact</nav>
-</header>
-<main>
-  <section>
-    <h2>Send a message</h2>
-    <form action="#" method="post">
-      <fieldset>
-        <legend>Your details</legend>
-        <p>
-          <label for="name">Name</label><br>
-          <input id="name" name="name" type="text" required>
-        </p>
-        <p>
-          <label for="email">Email</label><br>
-          <input id="email" name="email" type="email" required>
-        </p>
-        <p>
-          <label for="msg">Message</label><br>
-          <textarea id="msg" name="message" rows="5"></textarea>
-        </p>
-      </fieldset>
-      <button type="submit">Send</button>
-    </form>
-  </section>
+<body class="site">
+  <header class="site-header">
+    <h1>Joseph Kim</h1>
+    <nav aria-label="Primary navigation" class="site-nav">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="resume.html">Resume</a>
+      <a href="projects.html">Work</a>
+      <a href="contact.html" aria-current="page">Contact</a>
+    </nav>
+  </header>
 
-  <section>
-    <h2>Links</h2>
-    <ul>
-      <li><a href="mailto:jowii.kim@gmail.com">jowii.kim@gmail.com</a></li>
-      <li><a href="https://github.com/jowiik">GitHub</a></li>
-      <li><a href="https://www.linkedin.com/">LinkedIn</a></li>
-    </ul>
-  </section>
-</main>
-<footer><p>&copy; 2025 Joseph Kim</p></footer>
+  <main class="site-main">
+    <section aria-labelledby="contact" class="hero">
+      <h2 id="contact" class="hero-title">Get in Touch</h2>
+      <p class="lead intro-text">
+        The best way to reach me is by email. I’m open to front-end and full-stack roles, internships, and collaborations.
+      </p>
+      <p class="progress-row">
+        Email: <a href="mailto:jowii.kim@gmail.com">jowii.kim@gmail.com</a>
+      </p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2025 Joseph Kim</p>
+  </footer>
 </body>
 </html>
