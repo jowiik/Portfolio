@@ -203,6 +203,41 @@ body.site {
   }
 }
 
+/* ABOUT — minimal headers */
+
+.section-title{
+  font-size: clamp(1.5rem, 1.1rem + 1.2vw, var(--h2, 2rem));
+  font-weight: 600;
+  margin: 0;                      /* align title to the same left edge */
+}
+
+.rule {
+  border: 0;
+  height: 1px;
+  background: rgba(0,0,0,.12);
+  margin: .6rem 0 1rem;
+}
+
+ul.tight {
+  margin: 0 0 1rem;
+  padding-left: 1.1rem;
+}
+ul.tight li { margin: .35rem 0; }
+
+/* subtle entrance to match hero/nav */
+.about-section {
+  opacity: 0;
+  animation: fade-up 600ms ease-out both;
+}
+.about-section:nth-of-type(1) { animation-delay: .05s; }
+.about-section:nth-of-type(2) { animation-delay: .12s; }
+.about-section:nth-of-type(3) { animation-delay: .19s; }
+.about-section:nth-of-type(4) { animation-delay: .26s; }
+
+@media (prefers-reduced-motion: reduce) {
+  .about-section { animation: none; opacity: 1; transform: none; }
+}
+
 /* Baseline 2024 feature: @scope — limits styles to .hero subtree only */
 @scope (.hero) {
   progress[value] { accent-color: var(--brand, #0b84ff); }
