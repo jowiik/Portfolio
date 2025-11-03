@@ -237,6 +237,120 @@ ul.tight li { margin: .35rem 0; }
   .about-section { animation: none; opacity: 1; transform: none; }
 }
 
+/* CONTACT — flex layout */
+.contact-wrap {
+  display: flex;                    /* Flexbox requirement */
+  gap: var(--space-lg, 1.75rem);
+  align-items: flex-start;
+  flex-wrap: wrap;
+  min-block-size: 50dvh;            /* dynamic viewport unit */
+  animation: fade-up 700ms ease-out both;
+}
+
+.contact-aside {
+  flex: 1 1 16rem;                  /* relative sizing */
+  max-width: 22rem;
+}
+
+.contact-main {
+  flex: 2 1 26rem;                  /* grow more than aside */
+  min-inline-size: min(90dvw, 36rem);
+}
+
+.subhead {
+  font-size: 1.05rem;
+  margin: 0 0 .25rem;
+  color: var(--muted, #5a6472);
+  font-weight: 600;
+}
+
+/* Link list */
+.contact-links {
+  list-style: none;
+  padding-left: 0;
+  margin: .5rem 0 0;
+}
+.contact-links li { margin: .35rem 0; }
+.contact-links a {
+  color: var(--brand-ink, #0a66c2);
+  text-decoration: underline;
+  transition: color .2s ease;       /* transition requirement */
+}
+.contact-links a:hover { color: #005eff; }
+
+/* Form (native nesting used below) */
+.contact-form {
+  display: grid;
+  gap: 1rem;
+  animation: fade-up 700ms ease-out both;
+}
+.contact-form {
+  label { font-weight: 600; font-size: .95rem; }
+  input, textarea {
+    font: inherit;
+    padding: .7rem;
+    border: 1px solid rgba(0,0,0,.2);
+    border-radius: .4rem;
+    width: 100%;
+    transition: border-color .2s ease, transform .12s ease; /* transitions */
+  }
+  input:focus, textarea:focus {
+    outline: none;
+    border-color: var(--brand, #0b84ff);
+    transform: translateY(-1px);    /* transform requirement */
+  }
+  button {
+    width: fit-content;
+    padding: .65rem 1.2rem;
+    border: none;
+    border-radius: .4rem;
+    background: var(--brand, #0b84ff);
+    color: #fff;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform .12s ease, background-color .2s ease;
+  }
+  button:hover { transform: translateY(-1px); background-color: #005eff; }
+}
+
+/* Media query: stack vertically on narrow viewports */
+@media (max-width: 48rem) {
+  .contact-wrap { flex-direction: column; }
+  .contact-main { min-inline-size: 100%; }
+}
+
+/* Baseline 2024 feature: @scope — limit accent/focus styling to the form only */
+@scope (.contact-form) {
+  input:focus,
+  textarea:focus {
+    box-shadow: 0 0 0 .15rem color-mix(in srgb, var(--brand, #0b84ff), transparent 80%); /* EC color-mix */
+  }
+}
+
+/* Extra credit selector: style form container when any field is focused */
+.contact-form:has(:focus-visible) {
+  outline: none;                            /* turn off container outline */
+}
+
+/* Reduced motion: honor user preference */
+@media (prefers-reduced-motion: reduce) {
+  .contact-wrap, .contact-form { animation: none; }
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;                /* small space between icon and text */
+}
+
+.icon {
+  width: 1.2rem;              /* small, relative size */
+  height: auto;
+  object-fit: contain;
+  flex-shrink: 0;             /* prevents squishing in flexbox */
+  transform: translateY(0.3rem); /* optical centering tweak */
+}
+
 /* Baseline 2024 feature: @scope — limits styles to .hero subtree only */
 @scope (.hero) {
   progress[value] { accent-color: var(--brand, #0b84ff); }

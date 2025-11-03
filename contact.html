@@ -2,39 +2,74 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Contact — Joseph Kim</title>
+  <title>Contact | Joseph Kim</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Contact Joseph Kim">
-  <link rel="icon" href="favicon.ico">
-  <link rel="author" href="humans.txt">
   <link rel="stylesheet" href="style.css">
 </head>
-<body class="site">
-  <header class="site-header">
-    <h1>Joseph Kim</h1>
-    <nav aria-label="Primary navigation" class="site-nav">
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="resume.html">Resume</a>
-      <a href="projects.html">Work</a>
-      <a href="contact.html" aria-current="page">Contact</a>
-    </nav>
-  </header>
+  <body class="site">
 
-  <main class="site-main">
-    <section aria-labelledby="contact" class="hero">
-      <h2 id="contact" class="hero-title">Get in Touch</h2>
-      <p class="lead intro-text">
-        The best way to reach me is by email. I’m open to front-end and full-stack roles, internships, and collaborations.
-      </p>
-      <p class="progress-row">
-        Email: <a href="mailto:jowii.kim@gmail.com">jowii.kim@gmail.com</a>
-      </p>
-    </section>
-  </main>
+    <header class="site-header">
+      <h1>Joseph Kim</h1>
+      <nav aria-label="Primary navigation" class="site-nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="resume.html">Resume</a>
+        <a href="projects.html">Projects</a>
+        <a href="contact.html" aria-current="page">Contact</a>
+      </nav>
+    </header>
 
-  <footer class="site-footer">
-    <p>&copy; 2025 Joseph Kim</p>
-  </footer>
-</body>
+    <main class="site-main">
+      <section class="about-section" aria-labelledby="contact">
+        <hr class="rule">
+
+        <!-- Flex container -->
+        <div class="contact-wrap">
+          <!-- Left: quick links -->
+          <aside class="contact-aside" aria-labelledby="reach-me">
+            <ul class="tight contact-links">
+              <li>
+                <img src="mail-icon.png" alt="Email icon" class="icon">
+                <a href="mailto:jowii.kim@gmail.com">jowii.kim@gmail.com</a>
+              </li>
+              <li>
+                <img src="linkedin-icon.png" alt="LinkedIn icon" class="icon">
+                <a href="https://www.linkedin.com/in/josephkim614/" target="_blank" rel="noopener noreferrer">linkedin.com/in/josephkim614</a>
+              </li>
+              <li>
+                <img src="github-logo.png" alt="GitHub icon" class="icon">
+                <a href="https://github.com/jowiik" target="_blank" rel="noopener noreferrer">github.com/jowiik</a>
+              </li>
+            </ul>
+          </aside>
+
+          <!-- Right: form -->
+          <section class="contact-main" aria-labelledby="send-msg">
+            <h3 id="send-msg" class="subhead">Send a message</h3>
+
+            <form class="contact-form" action="https://formspree.io/f/your-form-id" method="POST">
+              <label for="name">Name</label>
+              <input id="name" name="name" type="text" required>
+
+              <label for="email">Email</label>
+              <input id="email" name="_replyto" type="email" required>
+
+              <label for="subject">Subject</label>
+              <input id="subject" name="subject" type="text" required>
+
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="6" required></textarea>
+
+              <button type="submit">Send</button>
+            </form>
+          </section>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>&copy; 2025 Joseph Kim</p>
+    </footer>
+
+    </body>
 </html>
