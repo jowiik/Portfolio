@@ -4,7 +4,7 @@
   --max-w: 960px;
   --space: 1rem;
   --space-lg: 1.75rem;
-  --bg: #ffffff;
+  --bg: #f8fbf8;
   --fg: #0b1220;
   --muted: #5a6472;
   --brand: #0b84ff;
@@ -20,7 +20,7 @@ html { font-size: 105%; }
 
 body.site {
   margin: 0;
-  background: var(--bg, #fff);
+  background-color: var(--bg, #f8fbf8); 
   color: var(--fg, #111);
   font-family: "Lora", Georgia, "Times New Roman", serif; /* <-- use Lora */
   line-height: 1.65;
@@ -350,6 +350,76 @@ ul.tight li { margin: .35rem 0; }
   flex-shrink: 0;             /* prevents squishing in flexbox */
   transform: translateY(0.3rem); /* optical centering tweak */
 }
+
+/* Projects layout — simple & consistent */
+.projects-list{
+  display: grid;
+  gap: clamp(1rem, 1vw + .5rem, 1.5rem);
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.project-card{
+  display: flex;
+  align-items: stretch;
+  gap: clamp(.9rem, .6rem + 1vw, 1.25rem);
+  background: #fff;
+  border: 1px solid rgba(0,0,0,.1);
+  border-radius: .6rem;
+  padding: clamp(.9rem, .6rem + 1vw, 1.25rem);
+}
+
+/* mobile: stack */
+@media (max-width: 56rem){
+  .project-card{ flex-direction: column; }
+}
+
+/* desktop: always image left, text right */
+@media (min-width: 56rem){
+  .project-card{ flex-direction: row; }
+}
+
+/* media (image slot) */
+.project-media{
+  flex: 0 0 min(22rem, 38dvw);
+  margin: 0;
+  border-radius: .45rem;
+  overflow: hidden;
+  background: #f4f6f8;
+  display: grid;
+  place-items: center;
+}
+.project-media img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  aspect-ratio: 16 / 10;
+  display: block;
+}
+
+/* text */
+.project-body{
+  flex: 1 1 24rem;
+  display: grid;
+  gap: .6rem;
+  align-content: start;
+}
+.project-title{ margin: 0; font-size: clamp(1.1rem, 1rem + .5vw, 1.45rem); }
+.project-desc{ margin: 0; line-height: 1.65; }
+.project-meta{
+  display: flex; flex-wrap: wrap; gap: .4rem .5rem;
+  padding: 0; margin: .1rem 0; list-style: none;
+}
+.tag{
+  font-size: .85rem; padding: .25em .6em;
+  border: 1px solid rgba(0,0,0,.18); border-radius: .35rem;
+  color: #5a6472;
+}
+.project-links{ display:flex; gap:.6rem; margin: .2rem 0 0; }
+.button-ghost{ text-decoration:none; border:1px solid rgba(0,0,0,.18); padding:.5rem .85rem; border-radius:.4rem; color:#0b1220; }
+.button-link{ text-decoration:none; color:#0a66c2; font-weight:700; }
+.button-link:hover{ text-decoration:underline; }
 
 /* Baseline 2024 feature: @scope — limits styles to .hero subtree only */
 @scope (.hero) {
