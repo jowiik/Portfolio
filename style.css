@@ -21,9 +21,9 @@ body.site {
   margin: 0;
   background-color: var(--bg, #f8fbf8); 
   color: var(--fg, #111);
-  font-family: "Lora", Georgia, "Times New Roman", serif; /* <-- use Lora */
+  font-family: "Lora", Georgia, "Times New Roman", serif;
   line-height: 1.65;
-  font-optical-sizing: auto; /* optional, helps variable fonts render nicely */
+  font-optical-sizing: auto;
 }
 
 /* Layout wrappers */
