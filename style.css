@@ -12,7 +12,6 @@
   --h1: 2.75rem;
   --h2: 2rem;
   --lead: 1.2rem;
-  --radius-full: 9999px;
   --hero-min: 35dvh;
 }
 
@@ -97,7 +96,7 @@ body.site {
 }
 
 .site-nav a:hover {
-  color: #005eff; /* brighter, more obvious hover color */
+  color: #005eff;
 }
 
 .site-nav a:hover::after {
@@ -108,7 +107,7 @@ body.site {
 
 /* Main content grid */
 .site-main {
-  display: grid; /* Grid */
+  display: grid;
   grid-template-columns: 1fr;
   gap: var(--space-lg, 1.75rem);
   padding-block: 1rem 2rem;
@@ -121,19 +120,19 @@ body.site {
 }
 
 .headshot {
-  width: clamp(14rem, 28dvw, 20rem); /* dynamic viewport unit + relative units */
+  width: clamp(14rem, 28dvw, 20rem);
   aspect-ratio: 1;
   border-radius: var(--radius-full, 9999px);
   object-fit: cover;
   object-position: center 25%;
   display: block;
   margin: 1rem auto 1.25rem;
-  animation: float-in 600ms ease-out both; /* animation */
+  animation: float-in 600ms ease-out both;
   will-change: transform, opacity;
 }
 .headshot:hover {
-  transform: scale(1.03);           /* transform */
-  transition: transform .15s ease;   /* transition */
+  transform: scale(1.03);
+  transition: transform .15s ease;
 }
 
 @keyframes fade-up {
@@ -149,7 +148,7 @@ body.site {
 
 /* Hero section */
 .hero {
-  min-block-size: var(--hero-min, 35vh); /* dvh fallback to vh */
+  min-block-size: var(--hero-min, 35vh);
   display: grid;
   place-items: center;
   text-align: center;
@@ -198,7 +197,7 @@ body.site {
 /* Native CSS Nesting (supported): scope to header nav link tweaks */
 .site-header {
   nav {
-    a { padding: 0.25em 0.15em; border-radius: 0.35em; } /* relative units (em) */
+    a { padding: 0.25em 0.15em; border-radius: 0.35em; }
   }
 }
 
@@ -207,7 +206,7 @@ body.site {
 .section-title{
   font-size: clamp(1.5rem, 1.1rem + 1.2vw, var(--h2, 2rem));
   font-weight: 600;
-  margin: 0;                      /* align title to the same left edge */
+  margin: 0;
 }
 
 .rule {
@@ -223,7 +222,6 @@ ul.tight {
 }
 ul.tight li { margin: .35rem 0; }
 
-/* subtle entrance to match hero/nav */
 .about-section {
   opacity: 0;
   animation: fade-up 600ms ease-out both;
@@ -340,15 +338,15 @@ ul.tight li { margin: .35rem 0; }
 .contact-item {
   display: flex;
   align-items: center;
-  gap: 0.5rem;                /* small space between icon and text */
+  gap: 0.5rem;
 }
 
 .icon {
-  width: 1.2rem;              /* small, relative size */
+  width: 1.2rem;
   height: auto;
   object-fit: contain;
-  flex-shrink: 0;             /* prevents squishing in flexbox */
-  transform: translateY(0.3rem); /* optical centering tweak */
+  flex-shrink: 0;
+  transform: translateY(0.3rem);
 }
 
 /* Projects layout — simple & consistent */
